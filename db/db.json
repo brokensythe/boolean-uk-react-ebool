@@ -181,25 +181,11 @@
   ],
   "basket": [
     {
-      "title": "Mens Casual Premium Slim Fit T-Shirts ",
-      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+      "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
       "quantity": 1,
-      "price": 22.3,
-      "id": 1
-    },
-    {
-      "title": "Mens Cotton Jacket",
-      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      "quantity": 1,
-      "price": 55.99,
-      "id": 2
-    },
-    {
-      "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-      "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
-      "quantity": 1,
-      "price": 39.99,
-      "id": 3
+      "price": 9.85,
+      "id": 4
     }
   ]
 }

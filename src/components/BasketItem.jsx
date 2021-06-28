@@ -9,16 +9,26 @@ function BasketItem({ image, title, price, quantity, setBasket, id, basket }) {
         return options
     }
 
-    function patchToBasket(e) {
-          fetch(`http://localhost:4000/basket/${id}`, {
-            method: "PATCH",
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ quantity: parseInt(e.target.value) })
-          })
-          .then(resp=>resp.json())
-          .then(data=>setBasket([...basket.filter(basketItem=>basketItem.id!==data.id), data].sort((a, b) => a.id - b.id)))
+    function handleChange(e) {
+      if (!parseInt(e.target.value)) {
+        fetch(`http://localhost:4000/basket/${id}`, {
+          method: "DELETE"
+        })
+        .then(resp=>{if (resp.ok) {
+          setBasket([...basket.filter(basketItem=>basketItem.id!==id)].sort((a, b) => a.id - b.id))
+        }
+    })
+      }else {
+        fetch(`http://localhost:4000/basket/${id}`, {
+          method: "PATCH",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ quantity: parseInt(e.target.value) })
+        })
+        .then(resp=>resp.json())
+        .then(data=>setBasket([...basket.filter(basketItem=>basketItem.id!==data.id), data].sort((a, b) => a.id - b.id)))
+      }
       }
 
     return  <li>
@@ -31,7 +41,7 @@ function BasketItem({ image, title, price, quantity, setBasket, id, basket }) {
       <p>{title}</p>
       <p>
         Qty:
-        <select value={quantity} onChange={patchToBasket}
+        <select value={quantity} onChange={handleChange}
           >{
               createOptions().map(option=>option)
           }</select

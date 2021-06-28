@@ -8,6 +8,15 @@
 // - Inside the Categories, each category should lead to a filtered version of the products page
 // - The add to basket button on the Products Details page shout add the item to the basket, and take you to the basket page 
 
+// - Make it so urls have slugs instead of ids. i.e. mypage.com/products/foldback-bag and mypage.com/categories/womens-clothing
+// - Add the concept to stock
+// - Add the concept of discounts
+// - Create a sign-in & sign-up page
+// - Each user should have their own cart
+// - The cart should reflect the most recent prices and stock
+// - Let the user know if the prices have changed or stock is gone since they last visited their cart 
+// - Have a wish-list, let users add items to a wishlist if it's not in stock and show them a message next time they are on the page and there's stoc
+
 import { Route, Switch, Redirect } from "react-router-dom";
 import Header from "./components/Header";
 import Basket from "./components/Basket";
